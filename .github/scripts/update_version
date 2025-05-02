@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 if ! git diff --name-only HEAD HEAD~1 | grep -qF 'build.gradle'; then
   new_version="$(date +%s)"
   sed --in-place "s!^//version:.*!//version: $new_version!g" build.gradle
